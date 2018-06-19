@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 const root = {
-    flexGrow: 1,
+  flexGrow: 1,
 };
 
 const title = {
@@ -25,25 +25,24 @@ const loginButton = {
   borderRadius: '24px',
   marginLeft: 8,
   marginRight: 3,
-}
+};
 
 class NavBar extends React.Component {
-
-render() {
-  return (
-    <div style={root}>
-      <AppBar position="static">
-        <Toolbar style={toolBarColor}>
-          <Typography variant="title" color="inherit" style={title}>
+  render() {
+    return (
+      <div style={root}>
+        <AppBar position="static">
+          <Toolbar style={toolBarColor}>
+            <Typography variant="title" color="inherit" style={title}>
             EasyGuide
-          </Typography>
-          <Button color="inherit" style={loginButton}>Login</Button>
-          <Button color="inherit" style={loginButton}>Cadastre-se</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
-}
+            </Typography>
+            <Button color="inherit" style={loginButton}>Login</Button>
+            <Button color="inherit" style={loginButton}>Cadastre-se</Button>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
 NavBar.propTypes = {
