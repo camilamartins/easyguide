@@ -30,7 +30,7 @@ const toolBarColor = {
 };
 
 const loginButton = {
-  border: '1px solid white',
+  border: '2px solid white',
   borderRadius: '24px',
 }
 
