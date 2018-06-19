@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 
-import Home from './components/home';
-import logo from './logo.svg';
+import Home from './components/Home';
 import './App.css';
 
 class App extends Component {
