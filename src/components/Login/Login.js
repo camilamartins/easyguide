@@ -6,6 +6,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import { loginUser } from '../../utils/auth/Auth';
 
 const colStyle = {
   display: 'flex',
@@ -18,6 +19,29 @@ const colStyle = {
 };
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+        username: '',
+        password: '',
+    };
+}
+
+  handleUsernameChange = (event) => {
+    this.setState({ username: event.target.value });
+  }
+
+  handlePasswordChange = (event) => {
+    this.setState({ password: event.target.value });
+  }
+
+  onClose = () => {
+    this.props.onClose();
+    console.log(this.state.username);
+    console.log(this.state.password);
+  }
+  
   render() {
     return (
       <div>
@@ -35,6 +59,8 @@ class Login extends React.Component {
               id="name"
               label="Nome de usuário"
               type="name"
+              value={this.state.username}
+              onChange={this.handleUsernameChange}
               style={{ marginRight: 30 }}
               InputProps={{
                 startAdornment: (
@@ -50,6 +76,8 @@ class Login extends React.Component {
               id="password"
               label="Senha"
               type="password"
+              value={this.state.password}
+              onChange={this.handlePasswordChange}
               style={{ marginRight: 30 }}
               InputProps={{
                 startAdornment: (
@@ -60,7 +88,7 @@ class Login extends React.Component {
               }}
             />
             <DialogActions>
-              <Button variant="contained" color="secondary" onClick={this.props.onClose} >
+              <Button variant="contained" color="secondary" onClick={this.onClose} >
               Entrar
               </Button>
             </DialogActions>

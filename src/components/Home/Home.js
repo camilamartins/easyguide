@@ -4,19 +4,17 @@ import LandingPage from '../LandingPage';
 import Select from 'react-select';
 
 class Home extends React.Component {
-	
-
-	render() {
-		return (
-			<div>
-			<NavBar />
-			<LandingPage />
+  render() {
+    return (
+      <div>
+        <NavBar />
+        <LandingPage />
 
 		}
 
-		</div>
-		);
-	}
+      </div>
+    );
+  }
 }
 
 export default Home;

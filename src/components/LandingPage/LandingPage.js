@@ -4,13 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import logo from '../../logo.png';
 import Button from '@material-ui/core/Button';
-import {render} from 'react-dom'
+import { render } from 'react-dom';
 import Select from 'react-select';
 import AutoComplete from '../AutoComplete';
 import CompleteEstados from '../CompleteEstados';
-
-
-
 
 
 const styles = theme => ({
@@ -41,23 +38,13 @@ const styles = theme => ({
 });
 
 
-
-
 function PaperSheet(props) {
-
-
-
-
-
   const { classes } = props;
 
   return (
 
 
-
-
     <div className={classes.root}>
-
 
 
       <p className={classes.logo}>
@@ -69,22 +56,21 @@ function PaperSheet(props) {
       </p>
       <Grid container spacing={8} className={classes.grid}>
         <Grid item xs={4} sm={3}>
-        <AutoComplete />
-      
-          
+          <AutoComplete />
+
+
         </Grid>
         <Grid item xs={4} sm={2}>
 
-        <CompleteEstados />
+          <CompleteEstados />
         </Grid>
-       <Button variant="contained" color="secondary">Pesquisar</Button>
+        <Button variant="contained" color="secondary">Pesquisar</Button>
 
       </Grid>
 
     </div>
   );
 }
-
 
 
 PaperSheet.propTypes = {

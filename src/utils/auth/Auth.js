@@ -1,0 +1,16 @@
+import axios from 'axios';
+import { ROOT_URL } from '../root_url';
+
+export { ROOT_URL };
+
+export function loginUser(cpf, password) {
+  return axios.post(`${ROOT_URL}/auth/user`, {
+    username,
+    password,
+    headers: {
+      authorization: localStorage.getItem('clientToken'),
+    },
+  })
+    .then(response => response.data)
+    .catch(error => error);
+}
