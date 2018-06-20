@@ -3,7 +3,7 @@ import { ROOT_URL } from '../root_url';
 
 export { ROOT_URL };
 
-export function loginUser(cpf, password) {
+export function loginUser(username, password) {
   return axios.post(`${ROOT_URL}/users/auth`, {
     username,
     password,
