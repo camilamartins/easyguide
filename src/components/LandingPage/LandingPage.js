@@ -74,9 +74,11 @@ function PaperSheet(props) {
           
         </Grid>
         <Grid item xs={4} sm={2}>
+
         <CompleteEstados />
         </Grid>
        <Button variant="contained" color="secondary">Pesquisar</Button>
+
       </Grid>
 
     </div>

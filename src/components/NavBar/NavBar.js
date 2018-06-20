@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import Cadastro from '../Cadastro';
+import Login from '../Login';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -28,16 +31,49 @@ const loginButton = {
 };
 
 class NavBar extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      modalCadastroVisible: false,
+      modalLoginVisible: false,
+    };
+  }
+
+  handleCadastroOpen = () => {
+    this.setState({ modalCadastroVisible: true });
+  };
+
+  handleLoginOpen = () => {
+    this.setState({ modalLoginVisible: true });
+  };
+
   render() {
     return (
       <div style={root}>
+      {this.state.modalCadastroVisible &&
+      <Cadastro
+        modalVisible={this.state.modalCadastroVisible}
+        onClose={() => this.setState({
+          modalCadastroVisible: false,
+        })}
+      />
+      }
+      {this.state.modalLoginVisible &&
+      <Login
+        modalVisible={this.state.modalLoginVisible}
+        onClose={() => this.setState({
+          modalLoginVisible: false,
+        })}
+      />
+      }
         <AppBar position="static">
           <Toolbar style={toolBarColor}>
             <Typography variant="title" color="inherit" style={title}>
             EasyGuide
             </Typography>
-            <Button color="inherit" style={loginButton}>Login</Button>
-            <Button color="inherit" style={loginButton}>Cadastre-se</Button>
+            <Button color="inherit" style={loginButton} onClick={this.handleLoginOpen}>Login</Button>
+            <Button color="inherit" style={loginButton} onClick={this.handleCadastroOpen}>Cadastre-se</Button>
           </Toolbar>
         </AppBar>
       </div>
