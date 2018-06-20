@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import { AutoComplete, Button, TextField } from '@meliuz/lib-ui';
 import logo from '../../logo.png';
 
 const styles = theme => ({
@@ -46,18 +45,12 @@ function PaperSheet(props) {
       </p>
       <Grid container spacing={8} className={classes.grid}>
         <Grid item xs={4} sm={4}>
-          <AutoComplete
-            placeholder="Estou procurando..."
-            dataSource="https://private-047f-meliuztestefrontend.apiary-mock.com/artists"
-            dataTransform={data => data.map(({ id, name }) => ({ value: id, label: name }))}
-            icon="view"
-            className={classes.searchAutoComplete}
-          />
+          <h2> Coloca aqui seu componente 1, Lucas </h2>
         </Grid>
         <Grid item xs={4} sm={2}>
-          <TextField value="Manaus" />
+        <h2> Coloca aqui seu componente 2, Lucas </h2>
         </Grid>
-        <Button className={classes.searchButton}>Pesquisar</Button>
+       <h2> Seu botão </h2>
       </Grid>
 
     </div>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Button } from '@meliuz/lib-ui';
+import Button from '@material-ui/core/Button';
 
 const root = {
   flexGrow: 1,
@@ -20,6 +20,12 @@ const toolBarColor = {
   backgroundColor: '#ff3859',
 };
 
+const loginButton = {
+  border: '2px solid white',
+  borderRadius: '24px',
+  marginLeft: 8,
+  marginRight: 3,
+};
 
 class NavBar extends React.Component {
   render() {
@@ -30,8 +36,8 @@ class NavBar extends React.Component {
             <Typography variant="title" color="inherit" style={title}>
             EasyGuide
             </Typography>
-            <Button>Login</Button>
-            <Button>Cadastre-se</Button>
+            <Button color="inherit" style={loginButton}>Login</Button>
+            <Button color="inherit" style={loginButton}>Cadastre-se</Button>
           </Toolbar>
         </AppBar>
       </div>
