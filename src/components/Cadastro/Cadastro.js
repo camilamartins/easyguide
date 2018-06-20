@@ -6,6 +6,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import axios from "axios";
+import {ROOT_URL} from "../../utils/root_url";
 
 const colStyle = {
   display: 'flex',
@@ -18,6 +20,53 @@ const colStyle = {
 };
 
 class Cadastro extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: '',
+            email: '',
+            username: '',
+            password: ''
+        };
+    };
+
+    handleUsernameChange = (event) => {
+        this.setState({ username: event.target.value });
+    };
+
+    handleNameChange = (event) => {
+        this.setState({ name: event.target.value });
+    };
+
+    handleEmailChange = (event) => {
+        this.setState({ email: event.target.value });
+    };
+
+    handlePasswordChange = (event) => {
+        this.setState({ password: event.target.value });
+    };
+
+    submit = () => {
+        axios({
+            method:'POST',
+            url: `${ROOT_URL}/users`,
+            headers: {
+                'Content-type': 'application/json'
+            },
+            data: this.state
+        })
+            .then(res => {
+                this.props.onClose();
+                alert(`Usuario ${res.data.user.username} cadastado com sucesso`);
+            })
+            .catch(err => {
+                this.props.onClose();
+                alert('Erro ao cadastrar usuario, verifique seus dados!');
+            });
+    };
+
   render() {
     return (
       <div>
@@ -35,6 +84,8 @@ class Cadastro extends React.Component {
               id="name"
               label="Nome"
               type="name"
+              value={this.state.name}
+              onChange={this.handleNameChange}
               style={{ marginRight: 30 }}
               InputProps={{
                 startAdornment: (
@@ -50,6 +101,8 @@ class Cadastro extends React.Component {
               id="name"
               label="E-mail"
               type="email"
+              value={this.state.email}
+              onChange={this.handleEmailChange}
               style={{ marginRight: 30 }}
               InputProps={{
                 startAdornment: (
@@ -65,6 +118,8 @@ class Cadastro extends React.Component {
               id="name"
               label="Nome de usuário"
               type="name"
+              value={this.state.username}
+              onChange={this.handleUsernameChange}
               style={{ marginRight: 30 }}
               InputProps={{
                 startAdornment: (
@@ -80,6 +135,8 @@ class Cadastro extends React.Component {
               id="password"
               label="Senha"
               type="password"
+              value={this.state.password}
+              onChange={this.handlePasswordChange}
               style={{ marginRight: 30 }}
               InputProps={{
                 startAdornment: (
@@ -90,7 +147,7 @@ class Cadastro extends React.Component {
               }}
             />
             <DialogActions>
-              <Button variant="contained" color="secondary" onClick={this.props.onClose} >
+              <Button variant="contained" color="secondary" onClick={this.submit} >
               Cadastrar
               </Button>
             </DialogActions>
