@@ -57,14 +57,11 @@ function PaperSheet(props) {
       <Grid container spacing={8} className={classes.grid}>
         <Grid item xs={4} sm={3}>
           <AutoComplete />
-
-
         </Grid>
         <Grid item xs={4} sm={2}>
-
           <CompleteEstados />
         </Grid>
-        <Button variant="contained" color="secondary">Pesquisar</Button>
+        <Button variant="contained" color="secondary" className={classes.searchButton}>Pesquisar</Button>
 
       </Grid>
 
