@@ -23,6 +23,7 @@ const styles = theme => ({
     alignItems: 'center',
   },
   logo: {
+    marginTop: 0,
     backgroundColor: '#312b45',
     height: 100,
     display: 'flex',
@@ -42,11 +43,7 @@ function PaperSheet(props) {
   const { classes } = props;
 
   return (
-
-
     <div className={classes.root}>
-
-
       <p className={classes.logo}>
         <img
           src={logo}
