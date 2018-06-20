@@ -48,9 +48,9 @@ function PaperSheet(props) {
           <h2> Coloca aqui seu componente 1, Lucas </h2>
         </Grid>
         <Grid item xs={4} sm={2}>
-        <h2> Coloca aqui seu componente 2, Lucas </h2>
+          <h2> Coloca aqui seu componente 2, Lucas </h2>
         </Grid>
-       <h2> Seu botão </h2>
+        <h2> Seu botão </h2>
       </Grid>
 
     </div>
