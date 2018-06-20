@@ -48,6 +48,8 @@ function PaperSheet(props) {
         <Grid item xs={4} sm={4}>
           <AutoComplete
             placeholder="Estou procurando..."
+            dataSource="https://private-047f-meliuztestefrontend.apiary-mock.com/artists"
+            dataTransform={data => data.map(({ id, name }) => ({ value: id, label: name }))}
             icon="view"
             className={classes.searchAutoComplete}
           />
