@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import logo from '../../logo.png';
+import Button from '@material-ui/core/Button';
+import {render} from 'react-dom'
+import Select from 'react-select';
+import AutoComplete from '../AutoComplete';
+import CompleteEstados from '../CompleteEstados';
+
+
+
+
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -32,10 +41,25 @@ const styles = theme => ({
 });
 
 
+
+
 function PaperSheet(props) {
+
+
+
+
+
   const { classes } = props;
+
   return (
+
+
+
+
     <div className={classes.root}>
+
+
+
       <p className={classes.logo}>
         <img
           src={logo}
@@ -44,18 +68,22 @@ function PaperSheet(props) {
         />
       </p>
       <Grid container spacing={8} className={classes.grid}>
-        <Grid item xs={4} sm={4}>
-          <h2> Coloca aqui seu componente 1, Lucas </h2>
+        <Grid item xs={4} sm={3}>
+        <AutoComplete />
+      
+          
         </Grid>
         <Grid item xs={4} sm={2}>
-        <h2> Coloca aqui seu componente 2, Lucas </h2>
+        <CompleteEstados />
         </Grid>
-       <h2> Seu botão </h2>
+       <Button variant="contained" color="secondary">Pesquisar</Button>
       </Grid>
 
     </div>
   );
 }
+
+
 
 PaperSheet.propTypes = {
   classes: PropTypes.object.isRequired,

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Select from 'react-select';
  
-class AutoComplete extends React.Component{
+class CompleteEstados extends React.Component{
 
   state = {
     selectedOption: '',
@@ -11,22 +11,21 @@ class AutoComplete extends React.Component{
     this.setState({ selectedOption });
     // selectedOption can be null when the `x` (close) button is clicked
     if (selectedOption) {
-      console.log(`Estou Procurando...: ${selectedOption.label}`);
+      console.log(`Estado: ${selectedOption.label}`);
     }
   }
   render() {
     const { selectedOption } = this.state;
 
     return (
-      
       <Select
         name="form-field-name"
+        placeholder="Estados..."
         value={selectedOption}
-        placeholder="Estou Procurando..."
         onChange={this.handleChange}
         options={[
-          { value: 'teste', label: 'teste' },
-          { value: 'two', label: 'teste2' },
+          { value: 'manaus', label: 'Manaus' },
+          { value: 'riodejaneiro', label: 'Rio de Janeiro' },
         ]}
       />
     );
@@ -34,4 +33,4 @@ class AutoComplete extends React.Component{
 
 }
 
-export default AutoComplete;
+export default CompleteEstados;
