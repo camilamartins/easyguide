@@ -8,7 +8,7 @@ import { render } from 'react-dom';
 import Select from 'react-select';
 import AutoComplete from '../AutoComplete';
 import CompleteEstados from '../CompleteEstados';
-
+import {Link} from 'react-router-dom';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -58,8 +58,7 @@ function PaperSheet(props) {
         <Grid item xs={4} sm={2}>
           <CompleteEstados />
         </Grid>
-        <Button variant="contained" color="secondary" className={classes.searchButton}>Pesquisar</Button>
-
+        <Link to={"list-places"}><Button variant="contained" color="secondary" className={classes.searchButton}>Pesquisar</Button></Link>
       </Grid>
 
     </div>
