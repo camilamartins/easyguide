@@ -75,9 +75,18 @@ const star = {
   height: 15, 
 }
 
+const starSmall = {
+  color: 'yellow',
+  margin: 0,
+  padding: 0,
+  height: 10, 
+}
+
+
 const gridRow = {
   display: 'flex',
   flexDirection: 'row',
+  marginTop: 0,
 };
 
 const gridReview = {
@@ -104,7 +113,7 @@ const paper = {
   color: 'white',
   fontWeight: 'bold',
   width: 40,
-  height: 30,
+  height: 25,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -155,11 +164,17 @@ class ModalPlace extends React.Component {
                 />
                 <div style={info}>
                   <div style={gridRow}>
-                    <h4 style={title}> 1. Crêpe Bistrô </h4>
+                    <h4 style={title}> Crêpe Bistrô </h4>
                     <Tooltip id="tooltip-icon" title="Com base na avaliação de usuários">
                       <Paper style={paper}> 9.0 </Paper>
                     </Tooltip>
                   </div>
+                  <div style={gridRow}>
+                 <Star style={starSmall} />
+                 <Star style={starSmall} />
+                 <Star style={starSmall} />
+                 <Star style={starSmall} />
+                 </div>
                   <h6 style={title}> Creperia </h6>
                   <div style={gridRow}>
                     <h6 style={title}>Rua Amapá, 01 (Rio Madeira), Manaus
@@ -174,7 +189,7 @@ class ModalPlace extends React.Component {
                 </div>
               </div>
               <div style={gridReview}>
-                <h5> Comentários sobre o local </h5>
+                <h4> Comentários sobre o local </h4>
                 </div>
                 <div style={gridRow}>
                 <img
@@ -232,11 +247,12 @@ class ModalPlace extends React.Component {
               <div style={colStyleButton}>
             <DialogActions>
             <Button variant="contained" color="secondary" onClick={this.props.onClose} >
+              Avaliar
+              <Star style={{marginLeft:3}} />
+              </Button>
+            <Button variant="contained" color="secondary" onClick={this.props.onClose} >
               Favoritar
               <FavoriteIcon  style={{marginLeft:3}}/>
-              </Button>
-              <Button variant="contained" color="secondary" onClick={this.props.onClose} >
-              OK
               </Button>
             </DialogActions>
             </div>

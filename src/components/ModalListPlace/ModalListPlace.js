@@ -83,7 +83,7 @@ const paper = {
   color: 'white',
   fontWeight: 'bold',
   width: 40,
-  height: 30,
+  height: 25,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
