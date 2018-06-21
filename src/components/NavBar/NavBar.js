@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'proptypes';
 
 import Cadastro from '../Cadastro';
 import Login from '../Login';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import AppBar from '@materialui/core/AppBar';
+import Toolbar from '@materialui/core/Toolbar';
+import Typography from '@materialui/core/Typography';
+import Button from '@materialui/core/Button';
 import axios from 'axios';
 import {ROOT_URL} from "../../utils/root_url";
 
@@ -44,7 +44,21 @@ class NavBar extends React.Component {
     };
   }
 
-
+     componentWillMount = this.componentDidUpdate = () => {
+          let token = localStorage.getItem('clientToken');
+          axios({
+              method:'GET',
+              url: `${ROOT_URL}/users/auth`,
+              headers: {
+                  'Authorization': token
+              }
+          }).then(res => {
+            this.setState({ isLogged: true, loggedUser: res.data.user });
+          }).catch(err => {
+            this.setState({ isLogged: false });
+            console.log(err);
+          });
+      };
 
   handleCadastroOpen = () => {
     this.setState({ modalCadastroVisible: true });
@@ -52,6 +66,11 @@ class NavBar extends React.Component {
 
   handleLoginOpen = () => {
     this.setState({ modalLoginVisible: true });
+  };
+
+  logout = () => {
+    this.setState({ isLogged: false, loggedUser: ''});
+    localStorage.setItem('clientToken', '');
   };
 
 
@@ -85,7 +104,7 @@ class NavBar extends React.Component {
               {!this.state.isLogged &&
               <div>
                   <Button color="inherit" style={loginButton} onClick={this.handleLoginOpen}>Login</Button>
-                  <Button color="inherit" style={loginButton} onClick={this.handleCadastroOpen}>Cadastre-se</Button>
+                  <Button color="inherit" style={loginButton} onClick={this.handleCadastroOpen}>Cadastrese</Button>
               </div>
               }
           </Toolbar>
