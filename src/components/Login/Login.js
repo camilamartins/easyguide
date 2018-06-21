@@ -7,6 +7,8 @@ import TextField from '@material-ui/core/TextField';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { loginUser } from '../../utils/auth/Auth';
+import axios from "axios";
+import {ROOT_URL} from "../../utils/root_url";
 
 const colStyle = {
   display: 'flex',
@@ -30,17 +32,30 @@ class Login extends React.Component {
 
   handleUsernameChange = (event) => {
     this.setState({ username: event.target.value });
-  }
+  };
 
   handlePasswordChange = (event) => {
     this.setState({ password: event.target.value });
-  }
+  };
 
-  onClose = () => {
-    this.props.onClose();
-    console.log(this.state.username);
-    console.log(this.state.password);
-  }
+  login = () => {
+      axios({
+          method:'POST',
+          url: `${ROOT_URL}/users/auth`,
+          headers: {
+              'Content-type': 'application/json'
+          },
+          data: this.state
+      })
+          .then(res => {
+              this.props.onClose();
+              localStorage.setItem('clientToken', `Bearer ${res.data.token}`);
+          })
+          .catch(err => {
+              this.props.onClose();
+              alert('Erro ao fazer login! Verifique seus dados.');
+          });
+  };
   
   render() {
     return (
@@ -71,7 +86,6 @@ class Login extends React.Component {
               }}
             />
             <TextField
-              autoFocus
               margin="dense"
               id="password"
               label="Senha"
@@ -88,7 +102,7 @@ class Login extends React.Component {
               }}
             />
             <DialogActions>
-              <Button variant="contained" color="secondary" onClick={this.onClose} >
+              <Button variant="contained" color="secondary" onClick={this.login} >
               Entrar
               </Button>
             </DialogActions>

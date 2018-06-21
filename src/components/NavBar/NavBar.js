@@ -7,6 +7,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
+import {ROOT_URL} from "../../utils/root_url";
 
 const root = {
   flexGrow: 1,
@@ -35,10 +37,28 @@ class NavBar extends React.Component {
     super();
 
     this.state = {
-      modalCadastroVisible: false,
-      modalLoginVisible: false,
+        modalCadastroVisible: false,
+        modalLoginVisible: false,
+        isLogged: false,
+        loggedUser: ''
     };
   }
+
+    componentWillMount = this.componentDidUpdate = () => {
+      let token = localStorage.getItem('clientToken');
+      axios({
+          method:'GET',
+          url: `${ROOT_URL}/users/auth`,
+          headers: {
+              'Authorization': token
+          }
+      }).then(res => {
+        this.setState({ isLogged: true, loggedUser: res.data.user });
+      }).catch(err => {
+        this.setState({ isLogged: false });
+        console.log(err);
+      });
+  };
 
   handleCadastroOpen = () => {
     this.setState({ modalCadastroVisible: true });
@@ -46,6 +66,11 @@ class NavBar extends React.Component {
 
   handleLoginOpen = () => {
     this.setState({ modalLoginVisible: true });
+  };
+
+  logout = () => {
+      this.setState({ isLogged: false, loggedUser: ''});
+      localStorage.setItem('clientToken', '');
   };
 
   render() {
@@ -72,8 +97,15 @@ class NavBar extends React.Component {
             <Typography variant="title" color="inherit" style={title}>
             EasyGuide
             </Typography>
-            <Button color="inherit" style={loginButton} onClick={this.handleLoginOpen}>Login</Button>
-            <Button color="inherit" style={loginButton} onClick={this.handleCadastroOpen}>Cadastre-se</Button>
+              {this.state.isLogged &&
+              <Button color="inherit" style={loginButton} onClick={this.logout}>Logout</Button>
+              }
+              {!this.state.isLogged &&
+              <div>
+                  <Button color="inherit" style={loginButton} onClick={this.handleLoginOpen}>Login</Button>
+                  <Button color="inherit" style={loginButton} onClick={this.handleCadastroOpen}>Cadastre-se</Button>
+              </div>
+              }
           </Toolbar>
         </AppBar>
       </div>

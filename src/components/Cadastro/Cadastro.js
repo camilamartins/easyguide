@@ -96,7 +96,6 @@ class Cadastro extends React.Component {
               }}
             />
             <TextField
-              autoFocus
               margin="dense"
               id="name"
               label="E-mail"
@@ -113,7 +112,6 @@ class Cadastro extends React.Component {
               }}
             />
             <TextField
-              autoFocus
               margin="dense"
               id="name"
               label="Nome de usuário"
@@ -130,7 +128,6 @@ class Cadastro extends React.Component {
               }}
             />
             <TextField
-              autoFocus
               margin="dense"
               id="password"
               label="Senha"
