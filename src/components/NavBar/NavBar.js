@@ -44,21 +44,7 @@ class NavBar extends React.Component {
     };
   }
 
-    componentWillMount = this.componentDidUpdate = () => {
-      let token = localStorage.getItem('clientToken');
-      axios({
-          method:'GET',
-          url: `${ROOT_URL}/users/auth`,
-          headers: {
-              'Authorization': token
-          }
-      }).then(res => {
-        this.setState({ isLogged: true, loggedUser: res.data.user });
-      }).catch(err => {
-        this.setState({ isLogged: false });
-        console.log(err);
-      });
-  };
+
 
   handleCadastroOpen = () => {
     this.setState({ modalCadastroVisible: true });
@@ -68,10 +54,6 @@ class NavBar extends React.Component {
     this.setState({ modalLoginVisible: true });
   };
 
-  logout = () => {
-      this.setState({ isLogged: false, loggedUser: ''});
-      localStorage.setItem('clientToken', '');
-  };
 
   render() {
     return (
