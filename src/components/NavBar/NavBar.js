@@ -44,7 +44,7 @@ class NavBar extends React.Component {
     };
   }
 
-     componentWillMount = this.componentDidUpdate = () => {
+     componentWillMount() {
           let token = localStorage.getItem('clientToken');
           axios({
               method:'GET',
