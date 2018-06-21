@@ -26,8 +26,12 @@ class AutoComplete extends React.Component{
         placeholder="Estou Procurando..."
         onChange={this.handleChange}
         options={[
-          { value: 'teste', label: 'teste' },
-          { value: 'two', label: 'teste2' },
+          { value: 'alimentacao', label: 'Alimentação' },
+          { value: 'cafe', label: 'Café' },
+          { value: 'vidaNoturna', label: 'Vida Noturna' },
+          { value: 'diversao', label: 'Diversão' },
+          { value: 'compras', label: 'Compras' },
+          { value: 'cafeManha', label: 'Café da manhã' },
         ]}
       />
     );
