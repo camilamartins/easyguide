@@ -20,12 +20,18 @@ class CompleteEstados extends React.Component{
     return (
       <Select
         name="form-field-name"
-        placeholder="Estados..."
+        placeholder="Cidade"
         value={selectedOption}
         onChange={this.handleChange}
         options={[
+          { value: 'belohorizonte', label: 'Belo Horizonte' },
+          { value: 'belem', label: 'Belém' },
+          { value: 'fortaleza', label: 'Fortaleza' },
+          { value: 'floripza', label: 'Florianópolis' },
           { value: 'manaus', label: 'Manaus' },
           { value: 'riodejaneiro', label: 'Rio de Janeiro' },
+          { value: 'sp', label: 'São Paulo' },
+          { value: 'slz', label: 'São Luís' },
         ]}
       />
     );
