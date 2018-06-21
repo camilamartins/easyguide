@@ -38,10 +38,10 @@ const styles = theme => ({
   },
 });
 
+class  PaperSheet extends React.Component {
 
-function PaperSheet(props) {
-  const { classes } = props;
-
+render(){
+  const { classes } = this.props;
   return (
     <div className={classes.root}>
       <p className={classes.logo}>
@@ -53,7 +53,7 @@ function PaperSheet(props) {
       </p>
       <Grid container spacing={8} className={classes.grid}>
         <Grid item xs={4} sm={3}>
-          <AutoComplete />
+          <AutoComplete  />
         </Grid>
         <Grid item xs={4} sm={2}>
           <CompleteEstados />
@@ -63,6 +63,7 @@ function PaperSheet(props) {
 
     </div>
   );
+}
 }
 
 

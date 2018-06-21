@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import {ROOT_URL} from "../../utils/root_url";
+import person3 from '../../person3.jpg';
 
 const root = {
   flexGrow: 1,
@@ -30,6 +31,15 @@ const loginButton = {
   borderRadius: '24px',
   marginLeft: 8,
   marginRight: 3,
+};
+
+const avatar = {
+  margin: 10,
+};
+
+const bigAvatar = {
+  width: 60,
+  height: 60,
 };
 
 class NavBar extends React.Component {
@@ -100,11 +110,12 @@ class NavBar extends React.Component {
             </Typography>
               {this.state.isLogged &&
               <Button color="inherit" style={loginButton} onClick={this.logout}>Logout</Button>
+              //<Avatar alt="Remy Sharp" src={person3} style={avatar} />
               }
               {!this.state.isLogged &&
               <div>
                   <Button color="inherit" style={loginButton} onClick={this.handleLoginOpen}>Login</Button>
-                  <Button color="inherit" style={loginButton} onClick={this.handleCadastroOpen}>Cadastrese</Button>
+                  <Button color="inherit" style={loginButton} onClick={this.handleCadastroOpen}>Cadastre-se</Button>
               </div>
               }
           </Toolbar>
