@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 
 import Cadastro from '../Cadastro';
 import Login from '../Login';
-import AppBar from '@materialui/core/AppBar';
-import Toolbar from '@materialui/core/Toolbar';
-import Typography from '@materialui/core/Typography';
-import Button from '@materialui/core/Button';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import {ROOT_URL} from "../../utils/root_url";
 
