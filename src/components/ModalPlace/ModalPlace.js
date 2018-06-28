@@ -247,10 +247,6 @@ class ModalPlace extends React.Component {
               <div style={colStyleButton}>
             <DialogActions>
             <Button variant="contained" color="secondary" onClick={this.props.onClose} >
-              Avaliar
-              <Star style={{marginLeft:3}} />
-              </Button>
-            <Button variant="contained" color="secondary" onClick={this.props.onClose} >
               Favoritar
               <FavoriteIcon  style={{marginLeft:3}}/>
               </Button>
