@@ -21,6 +21,7 @@ import cinemark from '../../cinemark.jpg';
 import praia from '../../praia.jpg';
 import csu from '../../csu.jpg';
 import braile from '../../braile.png';
+import amuleta from '../../amuleta.png';
 
 const librasStyle = {
   height: 25,
@@ -186,16 +187,24 @@ class ModalListPlace extends React.Component {
                     <Tooltip id="tooltip-icon" title="Esse lugar possui locais apropriados para cadeirantes!">
                       <Accessible style={{ marginLeft: 280 }} />
                     </Tooltip>
-                    <Tooltip id="tooltip-icon" title="Os funcionários deste local falam libras!">
+                    <Tooltip id="tooltip-icon" title="Possui local apropriado para idosos">
                     <img
-                  src={libras}
+                  src={amuleta}
                   alt="Teatro"
                   style={librasStyle}
                 />
                     </Tooltip>
+
                     <Tooltip id="tooltip-icon" title="Possui cardápio em braile">
                     <img
                   src={braile}
+                  alt="Teatro"
+                  style={librasStyle}
+                />
+                    </Tooltip>
+                    <Tooltip id="tooltip-icon" title="Os funcionários deste local falam libras!">
+                    <img
+                  src={libras}
                   alt="Teatro"
                   style={librasStyle}
                 />
@@ -232,16 +241,24 @@ class ModalListPlace extends React.Component {
                     <Tooltip id="tooltip-icon" title="Esse lugar possui locais apropriados para cadeirantes!">
                       <Accessible style={icon} />
                     </Tooltip>
-                    <Tooltip id="tooltip-icon" title="Os funcionários deste local falam libras!">
+                    <Tooltip id="tooltip-icon" title="Possui local apropriado para idosos">
                     <img
-                  src={libras}
+                  src={amuleta}
                   alt="Teatro"
                   style={librasStyle}
                 />
                     </Tooltip>
+         
                     <Tooltip id="tooltip-icon" title="Possui cardápio em braile">
                     <img
                   src={braile}
+                  alt="Teatro"
+                  style={librasStyle}
+                />
+                    </Tooltip>
+                    <Tooltip id="tooltip-icon" title="Os funcionários deste local falam libras!">
+                    <img
+                  src={libras}
                   alt="Teatro"
                   style={librasStyle}
                 />
@@ -278,16 +295,24 @@ class ModalListPlace extends React.Component {
                     <Tooltip id="tooltip-icon" title="Esse lugar possui locais apropriados para cadeirantes!">
                       <Accessible style={{ marginLeft: 350 }} />
                     </Tooltip>
-                    <Tooltip id="tooltip-icon" title="Os funcionários deste local falam libras!">
+                    <Tooltip id="tooltip-icon" title="Possui local apropriado para idosos">
                     <img
-                  src={libras}
+                  src={amuleta}
                   alt="Teatro"
                   style={librasStyle}
                 />
                     </Tooltip>
+                    
                     <Tooltip id="tooltip-icon" title="Possui cardápio em braile">
                     <img
                   src={braile}
+                  alt="Teatro"
+                  style={librasStyle}
+                />
+                    </Tooltip>
+                    <Tooltip id="tooltip-icon" title="Os funcionários deste local falam libras!">
+                    <img
+                  src={libras}
                   alt="Teatro"
                   style={librasStyle}
                 />
@@ -323,6 +348,13 @@ class ModalListPlace extends React.Component {
                     </h6>
                     <Tooltip id="tooltip-icon" title="Esse lugar possui locais apropriados para cadeirantes!">
                       <Accessible style={{ marginLeft: 210 }} />
+                    </Tooltip>
+                    <Tooltip id="tooltip-icon" title="Possui local apropriado para idosos">
+                    <img
+                  src={amuleta}
+                  alt="Teatro"
+                  style={librasStyle}
+                />
                     </Tooltip>
                     <Tooltip id="tooltip-icon" title="Os funcionários deste local falam libras!">
                     <img
@@ -362,6 +394,13 @@ class ModalListPlace extends React.Component {
                     </h6>
                     <Tooltip id="tooltip-icon" title="Esse lugar possui locais apropriados para cadeirantes!">
                       <Accessible style={{ marginLeft: 210 }} />
+                    </Tooltip>
+                    <Tooltip id="tooltip-icon" title="Possui local apropriado para idosos">
+                    <img
+                  src={amuleta}
+                  alt="Teatro"
+                  style={librasStyle}
+                />
                     </Tooltip>
                   </div>
                 </div>
